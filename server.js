@@ -139,7 +139,7 @@ app.get('/api/get-naver-cpc', async (req, res) => {
         let goldenKeywords = keywordDataList
             .filter(k => k.relKeyword !== targetData.relKeyword && k.compIdx !== '높음')
             .sort((a, b) => (getNum(b.monthlyMobileQcCnt) + getNum(b.monthlyPcQcCnt)) - (getNum(a.monthlyMobileQcCnt) + getNum(a.monthlyPcQcCnt)))
-            .slice(0, 3)
+            .slice(0, 5)
             .map(k => ({
                 keyword: k.relKeyword,
                 searchVol: formatNumber(getNum(k.monthlyMobileQcCnt) + getNum(k.monthlyPcQcCnt))
